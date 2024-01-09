@@ -29,7 +29,7 @@ const CustomReactTable = ({ data, columns, options, enableRowVirtualization = fa
         <LoadingCustomOverlay active={requestInProgress} >
             <Paper sx={{ my: 2, pb: 5 }}>
                 <MaterialReactTable
-                    initialState={{ density: "comfortable", showHideColumnFilters: "false" }}
+                    initialState={{ density: "compact", showHideColumnFilters: "false" }}
                     columns={columns}
                     data={data}
                     state={state}

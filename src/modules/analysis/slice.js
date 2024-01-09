@@ -14,7 +14,7 @@ const initialState = {
     searchTerm: "",
     open: false,
     table: {
-        vesselRecommendation: {
+        spendAnalysisResult: {
             requestInProgress: false,
             data: []
         }

@@ -1,11 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import RecommendationList from "./RecommendationList";
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actions as commonSliceActions } from "../../common/slice";
 import { actions as sliceAction } from "../slice";
 import OverLaySpend from "./spend/OverLaySpend";
+import SpendResultTable from "./spend/SpendResultTable";
 
 const boxStyle = {
     border: "1px solid black", borderRadius: "15px", display: "flex",
@@ -45,7 +45,7 @@ const IndexHome = () => {
                 <BoxComponent title="Supplier Evaluation" onClick={handleSpendAnalysis} />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={11} xl={11}>
-                <RecommendationList />
+                <SpendResultTable />
             </Grid>
         </Grid>
         <OverLaySpend />
