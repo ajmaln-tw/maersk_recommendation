@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider, Typography } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -8,6 +8,7 @@ import { persister, store } from "./app/store";
 import { ReactNotifications } from "./common/components";
 import theme from "./common/themes/theme";
 import PermittedRoutes from "./PermittedRoutes";
+import LoadingWrapper from "./common/components/custom/LoadingWrapper";
 
 
 const container = document.getElementById("root");
@@ -15,7 +16,7 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <PersistGate loading={<Typography> Loading </Typography>} persistor={persister}>
+      <PersistGate loading={<LoadingWrapper />} persistor={persister}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <ReactNotifications />
