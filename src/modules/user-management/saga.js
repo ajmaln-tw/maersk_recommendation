@@ -12,7 +12,7 @@ export function* signIn({ payload = {} }) {
         // eslint-disable-next-line camelcase
         const { payload: { access_token } = {} } = responseAction;
         localStorage.setItem(STORAGE_KEYS.ACCESS_TOKEN, access_token);
-        yield put(navigateTo("/vendor"));
+        yield put(navigateTo("/analysis"));
     }
 }
 

@@ -1,4 +1,4 @@
-export const STATE_REDUCER_KEY = "vendor";
+export const STATE_REDUCER_KEY = "analysis";
 
 
 export const VESSEL_RECOMMENDATION_TABLE_COLUMN = [
