@@ -21,5 +21,5 @@
 - Methods should be in camelCase and be named for their function.
 - Folder names should be in lower case / hyphen-case.
 
-## Development Env Deployment status
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9a4692b9-b43c-43a9-b9cc-021edac2457c/deploy-status)](https://app.netlify.com/sites/recomendation-engine-dev/deploys)
+## Deployment status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b2d3cb40-7eea-4823-854e-7548f3576e5e/deploy-status)](https://app.netlify.com/sites/maersk-recommendation/deploys)
