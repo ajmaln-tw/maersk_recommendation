@@ -18,7 +18,15 @@ const initialState = {
             requestInProgress: false,
             data: []
         }
-    }
+    },
+    openSpend: false,
+    spendAnalysis: {
+        item_cat: "IMPA",
+        item_sec1: "17 TABLEWARE & GALLEY UTENSILS",
+        item_sec2: "CABIN CLEANING EQUIPMENT",
+        item: "TOILET PLUNGER DIAM 160MM FOR JAPANESE STYLE"
+    },
+    impaDropDown: [{ id: "IMPA", name: "IMPA" }]
 
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import App from "../App";
 import { RootBoundary } from "../common/components";
 import { PrivateRoute } from "./common/protected-route/protectedRoute";
-import VendorRecommendation from "./vendor/components/IndexHome";
+import VendorRecommendation from "./analysis/components/IndexHome";
 import Home from "./home/components/IndexHome";
 
 
