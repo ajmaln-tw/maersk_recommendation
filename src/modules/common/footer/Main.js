@@ -13,9 +13,10 @@ const listStyle = {
 const Main = () => {
     return (
         <Grid sx={{ display: "flex", justifyContent: "end", width: "100%", pr: { md: "80px", sm: "40px", xs: "20px" }, color: "grey.main", py: 2 }}>
+            <Typography sx={listStyle}>{"Maersk Analysis | Ocean AI"}</Typography>
             <Typography sx={listStyle}>{"Terms of service"}</Typography>
             <Typography sx={listStyle}>{"Privacy Policy"}</Typography>
-            <Typography sx={{ pl: 2, fontSize: "12px" }}>&#169; 2023</Typography>
+            <Typography sx={{ pl: 2, fontSize: "12px" }}>&#169; 2024</Typography>
         </Grid >
     );
 };

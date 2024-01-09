@@ -2,7 +2,7 @@ import { IconButton, Modal, Tooltip } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { Icons } from "../../../common/components";
-// import Main from "./Main";
+import Main from "./Main";
 // import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 
@@ -76,7 +76,7 @@ const Footer = () => {
                 </Tooltip>
             </IconButton> */}
 
-            {/* <Main /> */}
+            <Main />
             <Modal
                 open={open}
                 hideBackdrop={true}
