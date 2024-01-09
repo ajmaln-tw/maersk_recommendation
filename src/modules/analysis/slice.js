@@ -89,16 +89,18 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(ACTION_TYPES.SEARCH_VENDOR_REQUEST, (state) => {
-                _.set(state, "table.vesselRecommendation.requestInProgress", true);
+            .addCase(ACTION_TYPES.SPEND_ANALYSIS_RESULT_REQUEST, (state) => {
+                _.set(state, "table.spendAnalysisResult.requestInProgress", true);
             })
-            .addCase(ACTION_TYPES.SEARCH_VENDOR_SUCCESS, (state, { payload }) => {
-                _.set(state, "table.vesselRecommendation.requestInProgress", false);
-                _.set(state, "table.vesselRecommendation.data", [payload]);
+            .addCase(ACTION_TYPES.SPEND_ANALYSIS_RESULT_SUCCESS, (state, { payload = {} }) => {
+                _.set(state, "table.spendAnalysisResult.requestInProgress", false);
+                _.set(state, "table.spendAnalysisResult.data", payload.data);
+                _.set(state, "openSpend", false);
             })
-            .addCase(ACTION_TYPES.SEARCH_VENDOR_FAILURE, (state) => {
-                _.set(state, "table.vesselRecommendation.data", []);
-                _.set(state, "table.vesselRecommendation.requestInProgress", false);
+            .addCase(ACTION_TYPES.SPEND_ANALYSIS_RESULT_FAILURE, (state) => {
+                _.set(state, "table.spendAnalysisResult.data", []);
+                _.set(state, "table.spendAnalysisResult.requestInProgress", false);
+                _.set(state, "openSpend", false);
             });
     }
 

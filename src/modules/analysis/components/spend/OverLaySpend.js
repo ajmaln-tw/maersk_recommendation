@@ -1,4 +1,4 @@
-import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle } from "@mui/material";
+import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle, LinearProgress } from "@mui/material";
 import React from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { STATE_REDUCER_KEY } from "../../constants";
@@ -9,6 +9,7 @@ import { FormController } from "../../../../common/components";
 import { formatFormData } from "../../../../utils/commonUtils";
 import { createStructuredSelector } from "reselect";
 import { getSpendAnalysisForm } from "../../selectors";
+import { fetchSpendAnalysisResult } from "../../actions";
 
 const OverLaySpend = ({ handleSubmit, errors }) => {
     const openSpend = useSelector(state => state[STATE_REDUCER_KEY]).openSpend;
@@ -16,7 +17,7 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
     const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const item_sec2DropDown = useSelector(state => state[STATE_REDUCER_KEY]).item_sec2DropDown;
     const itemDropDown = useSelector(state => state[STATE_REDUCER_KEY]).itemDropDown;
-
+    const loading = useSelector(state => state[STATE_REDUCER_KEY].table.spendAnalysisResult.requestInProgress)
 
     const dispatch = useDispatch();
 
@@ -45,7 +46,8 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
                         </Grid>
                     </Grid>
                 </Form>
-            </CustomCard>;
+            </CustomCard>
+            {loading && <LinearProgress />}
             <DialogActions>
                 <Button onClick={handleClose} color="primary">
                     <span style={{ color: "red" }}> x </span> <Typography> Close </Typography>
@@ -60,9 +62,10 @@ const mapStateToProps = createStructuredSelector({
     spendAnalysisForm: getSpendAnalysisForm
 });
 
-const mapDispatchToProps = () => ({
-
+const mapDispatchToProps = (dispatch) => ({
+    submit: data => dispatch(fetchSpendAnalysisResult(data))
 });
+
 
 const OverLaySpendForm = withFormik({
     enableReinitialize: true,

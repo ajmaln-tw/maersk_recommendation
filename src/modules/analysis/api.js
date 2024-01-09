@@ -34,12 +34,12 @@ export const searchVendorApi = ({ portName, itemName } = {}) => {
 
     });
 };
-export const recommendVendorApi = (data) => {
+export const spendAnalysisApi = (data) => {
     return {
-        url: API_URL.VENDOR.RECOMMEND,
+        url: API_URL.ANALYSIS.SPEND,
         method: REQUEST_METHOD.POST,
         payload: {
-            types: [ACTION_TYPES.SEARCH_VENDOR_REQUEST, ACTION_TYPES.SEARCH_VENDOR_SUCCESS, ACTION_TYPES.SEARCH_VENDOR_FAILURE],
+            types: [ACTION_TYPES.SPEND_ANALYSIS_RESULT_REQUEST, ACTION_TYPES.SPEND_ANALYSIS_RESULT_SUCCESS, ACTION_TYPES.SPEND_ANALYSIS_RESULT_FAILURE],
             data
         }
     };
