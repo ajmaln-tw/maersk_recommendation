@@ -26,7 +26,8 @@ const initialState = {
         item_sec2: "CABIN CLEANING EQUIPMENT",
         item: "TOILET PLUNGER DIAM 160MM FOR JAPANESE STYLE"
     },
-    impaDropDown: [{ id: "IMPA", name: "IMPA" }]
+    impaDropDown: [{ id: "IMPA", name: "IMPA" }],
+    item_sec1DropDown: []
 
 };
 

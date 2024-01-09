@@ -13,6 +13,7 @@ import { getSpendAnalysisForm } from "../../selectors";
 const OverLaySpend = ({ handleSubmit, errors }) => {
     const openSpend = useSelector(state => state[STATE_REDUCER_KEY]).openSpend;
     const impaDropDown = useSelector(state => state[STATE_REDUCER_KEY]).impaDropDown;
+    const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const dispatch = useDispatch();
 
     const handleClose = () => dispatch(sliceActions.setOpenSpend(false));
@@ -25,7 +26,7 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
                             <FormController statusError={true} errorName={errors?.item_cat} isMandatory={true} control="select" name="item_cat" label={"Item Category"} options={impaDropDown} placeholder="Enter Category" />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section-I"} options={impaDropDown} />
+                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section-I"} options={item_sec1DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
                             <FormController statusError={true} errorName={errors?.item_sec2} isMandatory={true} control="select" name="item_sec2" label={"Item Section-II"} options={impaDropDown} />
@@ -61,7 +62,7 @@ const mapDispatchToProps = () => ({
 const OverLaySpendForm = withFormik({
     enableReinitialize: true,
     mapPropsToValues: (props) => {
-        return props.vesselRecommendation;
+        return props.spendAnalysisForm;
     },
     // validationSchema: vendorSchema,
     handleSubmit: (values, { props: { submit } }) => {
