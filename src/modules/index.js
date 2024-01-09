@@ -1,6 +1,6 @@
 import * as common from "./common";
 import * as userManagement from "./user-management";
-import * as vendor from "./vendor";
+import * as analysis from "./analysis";
 
-export { common, userManagement, vendor, };
+export { common, userManagement, analysis };
 

@@ -4,21 +4,11 @@ import { Typography } from "@mui/material";
 import "./App.css";
 import DashboardLayout from "./layouts/DashboardLayout";
 
-function removeVendorSlashAndCapitalize(str) {
-  // Remove "/vendor" slash
-  const modifiedStr = str.replace("/", "");
-
-  // Capitalize the first letter
-  const capitalizedStr = modifiedStr.charAt(0).toUpperCase() + modifiedStr.slice(1);
-
-  return capitalizedStr;
-}
 function App() {
   const location = useLocation();
 
-  const title = removeVendorSlashAndCapitalize(location.pathname);
   useEffect(() => {
-    document.title = ` ${title} - Recommendation Engine`;
+    document.title = ` ${process.env.REACT_APP_PROJECT}`;
   }, [location]);
   return (
     <Typography className="app" component="div">

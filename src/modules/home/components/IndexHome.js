@@ -16,7 +16,7 @@ const Home = () => {
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Box>
                 <Button variant="contained"
-                    onClick={() => dispatch(signIn({ username: "ravi2114", password: "ravi2114" }))}
+                    onClick={() => dispatch(signIn({ username: "maersk-occeanai", password: "maersk-occeanai" }))}
                     sx={{ fontSize: "12px", width: "100px", height: "30px" }}> Generate Token </Button>
             </Box>
         </Box>

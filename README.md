@@ -4,7 +4,7 @@
 
 ## Project Requirements
 
-- [x] Node.js `v18.12.1 (npm v8.19.2)`
+- [x] Node.js `v18.19.0 (npm v10.2.5)`
 - [x] npm | yarn
 - [x] VS code version 1.77.0
 
