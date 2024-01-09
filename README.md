@@ -1,5 +1,5 @@
-##  Recommendation Engine Web
-#### Maersk Demo- recommendation  Engine
+##  Maersk recommendation ML Engine Web
+
 - Sub module of CBM - PAL
 
 ## Project Requirements
