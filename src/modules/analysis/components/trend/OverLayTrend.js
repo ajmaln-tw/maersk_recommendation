@@ -8,10 +8,10 @@ import { Form, withFormik } from "formik";
 import { FormController } from "../../../../common/components";
 import { formatFormData } from "../../../../utils/commonUtils";
 import { createStructuredSelector } from "reselect";
-import { getSpendAnalysisForm } from "../../selectors";
+import { gettrendAnalysisForm } from "../../selectors";
 
-const OverLaySpend = ({ handleSubmit, errors }) => {
-    const openSpend = useSelector(state => state[STATE_REDUCER_KEY]).openSpend;
+const OverLayTrend = ({ handleSubmit, errors }) => {
+    const openTrend = useSelector(state => state[STATE_REDUCER_KEY].openTrend);
     const impaDropDown = useSelector(state => state[STATE_REDUCER_KEY]).impaDropDown;
     const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const item_sec2DropDown = useSelector(state => state[STATE_REDUCER_KEY]).item_sec2DropDown;
@@ -20,10 +20,10 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
 
     const dispatch = useDispatch();
 
-    const handleClose = () => dispatch(sliceActions.setOpenSpend(false));
+    const handleClose = () => dispatch(sliceActions.setOpenTrend(false));
     return <Box>
-        <Dialog open={openSpend} onClose={handleClose} fullWidth maxWidth="lg">
-            <DialogTitle>Spend Analysis</DialogTitle>
+        <Dialog open={openTrend} onClose={handleClose} fullWidth maxWidth="lg">
+            <DialogTitle>Trend Analysis</DialogTitle>
             <CustomCard additionalStyle={{ overFlowX: "scroll", py: 3 }}>
                 <Form>
                     <Grid container columnSpacing={3} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -37,7 +37,7 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
                             <FormController statusError={true} errorName={errors?.item_sec2} isMandatory={true} control="select" name="item_sec2" label={"Item Section-II"} options={item_sec2DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item} control="select" name="item" label={"Item Name"} options={itemDropDown} />
+                            <FormController statusError={true} errorName={errors?.item} control="select" name="port" label={"Port Name"} options={itemDropDown} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <Button variant="contained" type="submit" onClick={handleSubmit}
@@ -57,14 +57,14 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
 
 
 const mapStateToProps = createStructuredSelector({
-    spendAnalysisForm: getSpendAnalysisForm
+    spendAnalysisForm: gettrendAnalysisForm
 });
 
 const mapDispatchToProps = () => ({
 
 });
 
-const OverLaySpendForm = withFormik({
+const OverLayTrendForm = withFormik({
     enableReinitialize: true,
     mapPropsToValues: (props) => {
         return props.spendAnalysisForm;
@@ -73,7 +73,7 @@ const OverLaySpendForm = withFormik({
     handleSubmit: (values, { props: { submit } }) => {
         submit(formatFormData(values));
     },
-    displayName: "OverLaySpendForm"
-})(OverLaySpend);
+    displayName: "OverLayTrendForm"
+})(OverLayTrend);
 
-export default connect(mapStateToProps, mapDispatchToProps)(OverLaySpendForm);
+export default connect(mapStateToProps, mapDispatchToProps)(OverLayTrendForm);
