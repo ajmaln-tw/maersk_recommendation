@@ -1,0 +1,11 @@
+{
+    "MuiSelect": {
+        "styleOverrides": {
+            "root": {
+                "width": "100%",
+                "border": "2px solid #0784D6",
+                "borderRadius": " 5px"
+            }
+        }
+    }
+}

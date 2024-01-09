@@ -1,0 +1,79 @@
+  {
+    "palette": {
+      "primary": {
+        "100": "#f1f9fe",
+        "200": "#cbe9fd",
+        "light": "#33aaf8",
+        "main": "#0275D8",
+        "dark": "#0890e9"
+      },
+      "secondary": {
+        "main": "#F8F8F8",
+        "light": "#f8f8f8",
+        "dark": "#eeeeee",
+        "700": "#dadada"
+      },
+      "background": {
+        "paper": "#ffff"
+      },
+      "cardBackground": {
+        "main": "#ffff"
+      },
+      "purple": {
+        "main": "#7066e0"
+      },
+      "error": {
+        "main": "#FC3B3B "
+      },
+      "white": {
+        "main": "#ffffff",
+        "light": "#fcfcfc"
+      },
+      "shaded": {
+        "main": "#86938E"
+      },
+      "dark": {
+        "main": "#000"
+      },
+      "boneWhite": {
+        "main": "#F9F6EE"
+      },
+      "green": {
+        "400": "#249D57",
+        "main": "#84BD0B",
+        "dark": "#5d8508",
+        "light": "#9ee20d "
+      },
+      "cyan": {
+        "main": "#249D57",
+        "dark": "#1d7d45",
+        "light": "#249D57 "
+      },
+      "red": {
+        "main": "#D74654",
+        "dark": "#d43645",
+        "light": "#e58790",
+        "100": "#DC796E"
+      },
+      "grey": {
+        "300": "#cfcfcf",
+        "400": "#737373",
+        "main": "#4d4d4d",
+        "dark": "#616161",
+        "light": "#9c9c9c"
+      },
+      "yellow": {
+        "light": "#CDFD02",
+        "dark": "#E4B10F"
+      },
+      "blue": {
+        "main": "#256AF5"
+      },
+      "pink": {
+        "main": "#CB3EFC"
+      },
+      "orange": {
+        "main": "#CC6C06"
+      }
+    }
+  }

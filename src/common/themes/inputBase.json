@@ -1,0 +1,19 @@
+{
+    "MuiOutlinedInput": {
+        "styleOverrides": {
+            "root": {
+                "multiline": "true",
+                "fontSize": "12px",
+                "borderRadius": "10px",
+                "border": "1px solid #000 !important",
+                "height": "35px",
+                "fontWeight": 600,
+                "color": "#000",
+                "backgroundColor": "#F8F8F8",
+                "fieldset": {
+                    "border": "1px solid #f8f8f8 !important"
+                }
+            }
+        }
+    }
+}
