@@ -20,8 +20,8 @@ const initialState = {
         }
     },
     openSpend: false,
-    spendAnalysis: {
-        item_cat: "IMPA",
+    spendAnalysisForm: {
+        item_cat: "",
         item_sec1: "17 TABLEWARE & GALLEY UTENSILS",
         item_sec2: "CABIN CLEANING EQUIPMENT",
         item: "TOILET PLUNGER DIAM 160MM FOR JAPANESE STYLE"
@@ -36,6 +36,9 @@ const slice = createSlice({
     name: STATE_REDUCER_KEY,
     reducers: {
         clearAll: () => initialState,
+        setOpenSpend: (state, { payload }) => {
+            _.set(state, "openSpend", payload);
+        },
         setTableLoading: (state) => {
             _.set(state, "table.vesselRecommendation.requestInProgress", true);
         },

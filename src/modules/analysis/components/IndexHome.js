@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actions as commonSliceActions } from "../../common/slice";
 import { actions as sliceAction } from "../slice";
+import OverLaySpend from "./spend/OverLaySpend";
 
 const boxStyle = {
     border: "1px solid black", borderRadius: "15px", display: "flex",
@@ -31,10 +32,7 @@ const IndexHome = () => {
         dispatch(commonSliceActions.setModulePath(pathname));
         return () => dispatch(sliceAction.clearAll());
     }, []);
-    const handleSpendAnalysis = () => {
-        // eslint-disable-next-line no-console
-        console.log("clicked");
-    };
+    const handleSpendAnalysis = () => dispatch(sliceAction.setOpenSpend(true));
     return <Box sx={{ my: 2, overFlowY: "scroll", px: 5, mx: 1 }}>
         <Grid container columnSpacing={3} sx={{ display: "flex", justifyContent: "center", my: 3, alignItems: "center", px: 2 }}>
             <Grid item xs={6} sm={6} md={4} lg={4} xl={4}>
@@ -50,6 +48,7 @@ const IndexHome = () => {
                 <RecommendationList />
             </Grid>
         </Grid>
+        <OverLaySpend />
     </Box >;
 
 };

@@ -7,3 +7,7 @@ const vesselRecommendation = (state) => state.vesselRecommendation.data;
 export const getVesselRecommendation = flow(getState, vesselRecommendation);
 
 
+const spendAnalysisForm = (state) => state.spendAnalysisForm;
+export const getSpendAnalysisForm = flow(getState, spendAnalysisForm);
+
+
