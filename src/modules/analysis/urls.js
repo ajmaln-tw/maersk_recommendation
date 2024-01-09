@@ -1,6 +1,9 @@
 export const API_URL = {
-    VENDOR: {
-        RECOMMEND: "recommend_vendor"
+    ANALYSIS: {
+        SPEND: "spend_analysis",
+        TREND: "trend_analysis",
+        SUPPLIER: "supplier_evaluation"
+
     }
 };
 

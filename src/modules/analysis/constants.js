@@ -6,25 +6,25 @@ export const SPEND_ANALYSIS_COL = [
         id: "vendor",
         header: "Vendor",
         accessorFn: (row) => row.vendor,
-        size: 80
+        size: 180
     },
     {
         id: "item section 1",
         header: "Item Section 1",
         accessorKey: "item section 1",
-        size: 80
+        size: 200
     },
     {
         id: "item section 2",
         header: "Item Section 2",
         accessorKey: "item section 2",
-        size: 100
+        size: 150
     },
     {
         id: "item",
         header: "Item Name",
         accessorKey: "item",
-        size: 100
+        size: 200
     },
     {
         id: "Transactional_volume",
@@ -36,7 +36,7 @@ export const SPEND_ANALYSIS_COL = [
         id: "max_unit_price",
         header: "Max. Unit Price",
         accessorKey: "max_unit_price",
-        size: 180
+        size: 120
     },
     {
         id: "port",
@@ -54,7 +54,7 @@ export const SPEND_ANALYSIS_COL = [
         id: "receipt date",
         header: "Receipt date",
         accessorKey: "receipt date",
-        size: 100
+        size: 150
     },
     {
         id: "vendor_total_price",
