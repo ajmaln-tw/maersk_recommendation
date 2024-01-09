@@ -44,3 +44,14 @@ export const spendAnalysisApi = (data) => {
         }
     };
 };
+
+export const trendAnalysisApi = (data) => {
+    return {
+        url: API_URL.ANALYSIS.TREND,
+        method: REQUEST_METHOD.POST,
+        payload: {
+            types: [ACTION_TYPES.TREND_ANALYSIS_RESULT_REQUEST, ACTION_TYPES.TREND_ANALYSIS_RESULT_SUCCESS, ACTION_TYPES.TREND_ANALYSIS_RESULT_FAILURE],
+            data
+        }
+    };
+};

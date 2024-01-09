@@ -1,4 +1,4 @@
-import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle } from "@mui/material";
+import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle, LinearProgress } from "@mui/material";
 import React from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { STATE_REDUCER_KEY } from "../../constants";
@@ -9,6 +9,7 @@ import { FormController } from "../../../../common/components";
 import { formatFormData } from "../../../../utils/commonUtils";
 import { createStructuredSelector } from "reselect";
 import { gettrendAnalysisForm } from "../../selectors";
+import { fetchTrendAnalysisResult } from "../../actions";
 
 const OverLayTrend = ({ handleSubmit, errors }) => {
     const openTrend = useSelector(state => state[STATE_REDUCER_KEY].openTrend);
@@ -16,7 +17,7 @@ const OverLayTrend = ({ handleSubmit, errors }) => {
     const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const item_sec2DropDown = useSelector(state => state[STATE_REDUCER_KEY]).item_sec2DropDown;
     const itemDropDown = useSelector(state => state[STATE_REDUCER_KEY]).itemDropDown;
-
+    const loading = useSelector(state => state[STATE_REDUCER_KEY].table.trendAnalysisResult.requestInProgress);
 
     const dispatch = useDispatch();
 
@@ -31,10 +32,10 @@ const OverLayTrend = ({ handleSubmit, errors }) => {
                             <FormController statusError={true} errorName={errors?.item_cat} isMandatory={true} control="select" name="item_cat" label={"Item Category"} options={impaDropDown} placeholder="Enter Category" />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section-I"} options={item_sec1DropDown} />
+                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section 1"} options={item_sec1DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item_sec2} isMandatory={true} control="select" name="item_sec2" label={"Item Section-II"} options={item_sec2DropDown} />
+                            <FormController statusError={true} errorName={errors?.item_sec2} control="select" name="item_sec2" label={"Item Section 2"} options={item_sec2DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
                             <FormController statusError={true} errorName={errors?.item} control="select" name="port" label={"Port Name"} options={itemDropDown} />
@@ -45,7 +46,8 @@ const OverLayTrend = ({ handleSubmit, errors }) => {
                         </Grid>
                     </Grid>
                 </Form>
-            </CustomCard>;
+            </CustomCard>
+            {loading && <LinearProgress />}
             <DialogActions>
                 <Button onClick={handleClose} color="primary">
                     <span style={{ color: "red" }}> x </span> <Typography> Close </Typography>
@@ -60,8 +62,8 @@ const mapStateToProps = createStructuredSelector({
     spendAnalysisForm: gettrendAnalysisForm
 });
 
-const mapDispatchToProps = () => ({
-
+const mapDispatchToProps = (dispatch) => ({
+    submit: data => dispatch(fetchTrendAnalysisResult(data))
 });
 
 const OverLayTrendForm = withFormik({

@@ -17,6 +17,10 @@ const initialState = {
         spendAnalysisResult: {
             requestInProgress: false,
             data: []
+        },
+        trendAnalysisResult: {
+            requestInProgress: false,
+            data: []
         }
     },
     openSpend: false,
@@ -101,6 +105,20 @@ const slice = createSlice({
                 _.set(state, "table.spendAnalysisResult.data", []);
                 _.set(state, "table.spendAnalysisResult.requestInProgress", false);
                 _.set(state, "openSpend", false);
+            })
+
+            .addCase(ACTION_TYPES.TREND_ANALYSIS_RESULT_REQUEST, (state) => {
+                _.set(state, "table.trendAnalysisResult.requestInProgress", true);
+            })
+            .addCase(ACTION_TYPES.TREND_ANALYSIS_RESULT_SUCCESS, (state, { payload = {} }) => {
+                _.set(state, "table.trendAnalysisResult.requestInProgress", false);
+                _.set(state, "table.trendAnalysisResult.data", payload.data);
+                _.set(state, "openTrend", false);
+            })
+            .addCase(ACTION_TYPES.TREND_ANALYSIS_RESULT_FAILURE, (state) => {
+                _.set(state, "table.trendAnalysisResult.data", []);
+                _.set(state, "table.trendAnalysisResult.requestInProgress", false);
+                _.set(state, "openTrend", false);
             });
     }
 

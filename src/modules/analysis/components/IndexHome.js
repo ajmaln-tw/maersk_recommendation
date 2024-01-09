@@ -8,6 +8,7 @@ import OverLaySpend from "./spend/OverLaySpend";
 import SpendResultTable from "./spend/SpendResultTable";
 import OverLayTrend from "./trend/OverLayTrend";
 import OverLaySupplier from "./supplier/OverLaySupplier";
+import TrendResultTable from "./trend/TrendResultTable";
 
 const boxStyle = {
     border: "1px solid black", borderRadius: "15px", display: "flex",
@@ -52,6 +53,7 @@ const IndexHome = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={11} xl={11}>
                 <SpendResultTable />
+                <TrendResultTable />
             </Grid>
         </Grid>
         <OverLaySpend />

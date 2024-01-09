@@ -17,7 +17,7 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
     const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const item_sec2DropDown = useSelector(state => state[STATE_REDUCER_KEY]).item_sec2DropDown;
     const itemDropDown = useSelector(state => state[STATE_REDUCER_KEY]).itemDropDown;
-    const loading = useSelector(state => state[STATE_REDUCER_KEY].table.spendAnalysisResult.requestInProgress)
+    const loading = useSelector(state => state[STATE_REDUCER_KEY].table.spendAnalysisResult.requestInProgress);
 
     const dispatch = useDispatch();
 
@@ -32,10 +32,10 @@ const OverLaySpend = ({ handleSubmit, errors }) => {
                             <FormController statusError={true} errorName={errors?.item_cat} isMandatory={true} control="select" name="item_cat" label={"Item Category"} options={impaDropDown} placeholder="Enter Category" />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section-I"} options={item_sec1DropDown} />
+                            <FormController statusError={true} errorName={errors?.item_sec1} isMandatory={true} control="select" name="item_sec1" label={"Item Section 1"} options={item_sec1DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item_sec2} isMandatory={true} control="select" name="item_sec2" label={"Item Section-II"} options={item_sec2DropDown} />
+                            <FormController statusError={true} errorName={errors?.item_sec2} isMandatory={true} control="select" name="item_sec2" label={"Item Section 2"} options={item_sec2DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
                             <FormController statusError={true} errorName={errors?.item} control="select" name="item" label={"Item Name"} options={itemDropDown} />
