@@ -186,15 +186,21 @@ export const SUPPLIER_ANALYSIS_COL = [
     },
     {
         id: "Item",
-        header: "Item",
-        accessorFn: (row) => row.accessorKey.length ? row.accessorKey.join(", ") : "",
+        header: "Items",
+        accessorFn: (row) => {
+            const Item = row?.Item;
+            return (Item && Item?.length) ? Item.join(", ") : "";
+        },
         size: 130
     },
     {
         id: "Total_Price per item",
         header: "Total Price per Item",
         accessorKey: "Total_Price per item",
-        accessorFn: (row) => row["Total_Price per item"].length ? row["Total_Price per item"].join(", ") : "",
+        accessorFn: (row) => {
+            const totalPricePerItem = row["Total_Price per item"];
+            return (totalPricePerItem && totalPricePerItem?.length) ? totalPricePerItem.join(", ") : "";
+        },
         size: 130
     },
     {
