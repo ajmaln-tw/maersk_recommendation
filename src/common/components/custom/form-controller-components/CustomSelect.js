@@ -41,7 +41,7 @@ function CustomSelect(props) {
                       }),
                       option: (provided) => ({
                         ...provided,
-                        maxHeight: "30px", fontSize: "10px"
+                        maxHeight: "70px", fontSize: "10px"
                       })
                     }}
                     {...field}

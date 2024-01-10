@@ -106,7 +106,7 @@ export const TREND_ANALYSIS_COL = [
         id: "VENDOR",
         header: "VENDOR",
         accessorKey: "VENDOR",
-        size: 100
+        size: 200
     },
     {
         id: "PORT_ID",
@@ -122,21 +122,21 @@ export const TREND_ANALYSIS_COL = [
     },
     {
         id: "ITEM_SECTION_1",
-        header: "ITEM_SECTION_1",
+        header: "ITEM_SECTION 1",
         accessorKey: "ITEM_SECTION_1",
-        size: 100
+        size: 200
     },
     {
         id: "ITEM_SECTION_2",
         header: "ITEM SECTION 2",
         accessorKey: "ITEM_SECTION_2",
-        size: 100
+        size: 200
     },
     {
         id: "ITEM",
         header: "ITEM",
         accessorKey: "ITEM",
-        size: 80
+        size: 200
     },
     {
         id: "MIN_UNIT_PRICE",
@@ -148,7 +148,7 @@ export const TREND_ANALYSIS_COL = [
         id: "RECEIPT_DATE",
         header: "RECEIPT DATE",
         accessorKey: "RECEIPT_DATE",
-        size: 130
+        size: 200
     }
 ];
 
