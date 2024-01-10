@@ -14,11 +14,16 @@ const initialState = {
     searchTerm: "",
     open: false,
     table: {
+        currentTable: "",
         spendAnalysisResult: {
             requestInProgress: false,
             data: []
         },
         trendAnalysisResult: {
+            requestInProgress: false,
+            data: []
+        },
+        supplierAnalysisResult: {
             requestInProgress: false,
             data: []
         }
@@ -119,6 +124,21 @@ const slice = createSlice({
                 _.set(state, "table.trendAnalysisResult.data", []);
                 _.set(state, "table.trendAnalysisResult.requestInProgress", false);
                 _.set(state, "openTrend", false);
+            })
+
+            .addCase(ACTION_TYPES.SUPPLIER_EVAL_RESULT_REQUEST, (state) => {
+                _.set(state, "table.current.requestInProgress", true);
+                _.set(state, "table.supplierAnalysisResult.requestInProgress", true);
+            })
+            .addCase(ACTION_TYPES.SUPPLIER_EVAL_RESULT_SUCCESS, (state, { payload = {} }) => {
+                _.set(state, "table.supplierAnalysisResult.requestInProgress", false);
+                _.set(state, "table.supplierAnalysisResult.data", payload.data);
+                _.set(state, "openSupplier", false);
+            })
+            .addCase(ACTION_TYPES.SUPPLIER_EVAL_RESULT_FAILURE, (state) => {
+                _.set(state, "table.supplierAnalysisResult.data", []);
+                _.set(state, "table.supplierAnalysisResult.requestInProgress", false);
+                _.set(state, "openSupplier", false);
             });
     }
 

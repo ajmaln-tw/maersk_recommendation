@@ -9,6 +9,7 @@ import { FormController } from "../../../../common/components";
 import { formatFormData } from "../../../../utils/commonUtils";
 import { createStructuredSelector } from "reselect";
 import { getSupplierAnalysisForm } from "../../selectors";
+import { fetchSupplierResult } from "../../actions";
 
 const OverLaySupplier = ({ handleSubmit, errors }) => {
     const openSupplier = useSelector(state => state[STATE_REDUCER_KEY]).openSupplier;
@@ -25,7 +26,7 @@ const OverLaySupplier = ({ handleSubmit, errors }) => {
                 <Form>
                     <Grid container columnSpacing={3} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item} control="select" name="item" label={"Vendor Name"} isMandatory={true} options={vendorDropDown} />
+                            <FormController statusError={true} errorName={errors?.vendor} control="select" name="vendor" label={"Vendor Name"} isMandatory={true} options={vendorDropDown} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <Button variant="contained" type="submit" onClick={handleSubmit}
@@ -45,11 +46,11 @@ const OverLaySupplier = ({ handleSubmit, errors }) => {
 
 
 const mapStateToProps = createStructuredSelector({
-    spendAnalysisForm: getSupplierAnalysisForm
+    supplierAnalysisForm: getSupplierAnalysisForm
 });
 
-const mapDispatchToProps = () => ({
-
+const mapDispatchToProps = (dispatch) => ({
+    submit: data => dispatch(fetchSupplierResult(data))
 });
 
 const OverLaySupplierForm = withFormik({

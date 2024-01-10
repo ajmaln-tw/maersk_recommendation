@@ -55,3 +55,15 @@ export const trendAnalysisApi = (data) => {
         }
     };
 };
+
+
+export const supplierAnalysisApi = (data) => {
+    return {
+        url: API_URL.ANALYSIS.SUPPLIER,
+        method: REQUEST_METHOD.POST,
+        payload: {
+            types: [ACTION_TYPES.SUPPLIER_EVAL_RESULT_REQUEST, ACTION_TYPES.SUPPLIER_EVAL_RESULT_SUCCESS, ACTION_TYPES.SUPPLIER_EVAL_RESULT_FAILURE],
+            data
+        }
+    };
+};

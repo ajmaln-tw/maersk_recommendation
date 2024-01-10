@@ -160,3 +160,54 @@ export const trendAnalysisColumnOrder = [
     "MIN_UNIT_PRICE",
     "RECEIPT_DATE"
 ];
+
+export const SUPPLIER_ANALYSIS_COL = [
+    {
+        id: "Vendor",
+        header: "Vendor",
+        accessorKey: "Vendor",
+        size: 130
+    },
+    {
+        id: "Port",
+        header: "Port",
+        accessorKey: "Port",
+        size: 130
+    },
+    {
+        id: "Mean_Lead_Time",
+        header: "Mean Lead Time",
+        accessorFn: (row) => row.Mean_Lead_Time.length ? row.Mean_Lead_Time.join(", ") : "",
+        size: 130
+    },
+    // {
+    //     id: "Item",
+    //     header: "Item",
+    //     accessorKey: "Item",
+    //     size: 130
+    // },
+    // {
+    //     id: "Total_Price per item",
+    //     header: "Total Price per Item",
+    //     accessorKey: "Total_Price per item",
+    //     size: 130
+    // },
+    {
+        id: "RATING",
+        header: "RATING",
+        accessorKey: "RATING",
+        size: 130
+    }
+
+];
+
+export const supplierAnalysisColumnOrder = [
+    "Vendor",
+    "Port",
+    "VENDOR",
+    "Mean_Lead_Time",
+    "Item",
+    "Total_Price per item",
+    "ITEM_SECTION_2",
+    "RATING"
+];

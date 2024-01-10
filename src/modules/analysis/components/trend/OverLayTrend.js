@@ -16,7 +16,7 @@ const OverLayTrend = ({ handleSubmit, errors }) => {
     const impaDropDown = useSelector(state => state[STATE_REDUCER_KEY]).impaDropDown;
     const item_sec1DropDown = useSelector(state => state[STATE_REDUCER_KEY].item_sec1DropDown);
     const item_sec2DropDown = useSelector(state => state[STATE_REDUCER_KEY]).item_sec2DropDown;
-    const itemDropDown = useSelector(state => state[STATE_REDUCER_KEY]).itemDropDown;
+    const portDropDown = useSelector(state => state[STATE_REDUCER_KEY]).portDropDown;
     const loading = useSelector(state => state[STATE_REDUCER_KEY].table.trendAnalysisResult.requestInProgress);
 
     const dispatch = useDispatch();
@@ -38,7 +38,7 @@ const OverLayTrend = ({ handleSubmit, errors }) => {
                             <FormController statusError={true} errorName={errors?.item_sec2} control="select" name="item_sec2" label={"Item Section 2"} options={item_sec2DropDown} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                            <FormController statusError={true} errorName={errors?.item} control="select" name="port" label={"Port Name"} options={itemDropDown} />
+                            <FormController statusError={true} errorName={errors?.item} control="select" name="port" label={"Port Name"} options={portDropDown} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <Button variant="contained" type="submit" onClick={handleSubmit}
