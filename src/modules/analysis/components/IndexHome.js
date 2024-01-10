@@ -30,7 +30,7 @@ const checkSelected = (selected) => selected ? boxStyleSelected : { backgroundCo
 
 const BoxComponent = ({ title = "", onClick, Icon, isSelected }) => <Box sx={{ ...boxStyle, ...checkSelected(isSelected) }} onClick={onClick} >
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-        <Box>{Icon && <Icon fontSize="large" sx={{ fontSize: "18px" }} />}</Box>
+        <Box>{Icon && <Icon fontSize="large" />}</Box>
         <Typography sx={{ fontSize: "14px", fontWeight: 700 }}> {title} </Typography>
     </Box>
 </Box >;
@@ -50,14 +50,14 @@ const IndexHome = () => {
 
     return <Box sx={{ my: 2, overFlowY: "scroll", px: 5, mx: 1 }}>
         <Grid container rowSpacing={3} columnSpacing={3} sx={{ display: "flex", justifyContent: "center", my: 3, alignItems: "center", px: 2 }}>
-            <Grid item xs={6} sm={6} md={4} lg={4} xl={4}>
+            <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
                 <BoxComponent title="Spend Analysis" onClick={handleSpendAnalysis} Icon={AttachMoney} isSelected={currentTable === TABLE_ID.SPEND} />
             </Grid>
             <Grid item xs={6} sm={6} md={4} lg={4} xl={4}>
                 <BoxComponent title="Trend Analysis" onClick={handleTrendAnalysis} Icon={TrendingUp} isSelected={currentTable === TABLE_ID.TREND} />
             </Grid>
             <Grid item xs={6} sm={6} md={4} lg={4} xl={4}>
-                <BoxComponent title="Supplier Evaluation" onClick={handleSupplierEvaluation} icon={LocalShipping} isSelected={currentTable === TABLE_ID.SUPPLIER} />
+                <BoxComponent title="Supplier Evaluation" onClick={handleSupplierEvaluation} Icon={LocalShipping} isSelected={currentTable === TABLE_ID.SUPPLIER} />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={11} xl={11}>
                 <TableWrapper />

@@ -191,10 +191,10 @@ export const SUPPLIER_ANALYSIS_COL = [
             const Item = row?.Item;
             return (Item && Item?.length) ? Item.join(", ") : "";
         },
-        size: 130
+        size: 200
     },
     {
-        id: "Total_Price per item",
+        id: "Total_Price Per item",
         header: "Total Price per Item",
         accessorKey: "Total_Price per item",
         accessorFn: (row) => {
@@ -205,7 +205,7 @@ export const SUPPLIER_ANALYSIS_COL = [
     },
     {
         id: "RATING",
-        header: "RATING",
+        header: "Rating",
         accessorKey: "Rating",
         size: 130
     }
