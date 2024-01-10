@@ -11,9 +11,9 @@ import FetchLoader from "./FetchLoader";
 import { fadeLoaderStyle } from "./constants";
 
 const DefaultLoader = () => {
-    return <Box sx={{ display: "flex", px: 2, py: 1, justifyContent: "center", flexDirection: "column", borderRadius: "15px", backgroundColor: palette.palette.primary.main }}>
+    return <Box sx={{ display: "flex", px: 2, py: 1, justifyContent: "center", alignItems: "center", flexDirection: "column", borderRadius: "15px", backgroundColor: palette.palette.primary.main }}>
         <Typography sx={{ fontWeight: 600, fontSize: "14px" }} color={"#fff"}>Fetching...</Typography>
-        <ScaleLoader color={"#fff"} speedMultiplier={1.9} />
+        <Box> <ScaleLoader color={"#fff"} speedMultiplier={1.9} /></Box>
     </Box>;
 };
 

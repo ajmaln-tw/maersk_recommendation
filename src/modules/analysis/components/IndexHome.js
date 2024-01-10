@@ -5,10 +5,9 @@ import { useDispatch } from "react-redux";
 import { actions as commonSliceActions } from "../../common/slice";
 import { actions as sliceAction } from "../slice";
 import OverLaySpend from "./spend/OverLaySpend";
-import SpendResultTable from "./spend/SpendResultTable";
 import OverLayTrend from "./trend/OverLayTrend";
 import OverLaySupplier from "./supplier/OverLaySupplier";
-import TrendResultTable from "./trend/TrendResultTable";
+import TableWrapper from "./TableWrapper";
 
 const boxStyle = {
     border: "1px solid black", borderRadius: "15px", display: "flex",
@@ -52,8 +51,7 @@ const IndexHome = () => {
                 <BoxComponent title="Supplier Evaluation" onClick={handleSupplierEvaluation} />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={11} xl={11}>
-                <SpendResultTable />
-                <TrendResultTable />
+                <TableWrapper />
             </Grid>
         </Grid>
         <OverLaySpend />

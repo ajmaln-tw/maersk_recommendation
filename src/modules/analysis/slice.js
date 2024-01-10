@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { STATE_REDUCER_KEY } from "./constants";
+import { STATE_REDUCER_KEY, TABLE_ID } from "./constants";
 import { ACTION_TYPES } from "./actions";
 const initialState = {
 
@@ -99,6 +99,7 @@ const slice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(ACTION_TYPES.SPEND_ANALYSIS_RESULT_REQUEST, (state) => {
+                _.set(state, "table.currentTable", TABLE_ID.SPEND);
                 _.set(state, "table.spendAnalysisResult.requestInProgress", true);
             })
             .addCase(ACTION_TYPES.SPEND_ANALYSIS_RESULT_SUCCESS, (state, { payload = {} }) => {
@@ -113,6 +114,7 @@ const slice = createSlice({
             })
 
             .addCase(ACTION_TYPES.TREND_ANALYSIS_RESULT_REQUEST, (state) => {
+                _.set(state, "table.currentTable", TABLE_ID.TREND);
                 _.set(state, "table.trendAnalysisResult.requestInProgress", true);
             })
             .addCase(ACTION_TYPES.TREND_ANALYSIS_RESULT_SUCCESS, (state, { payload = {} }) => {
@@ -127,7 +129,7 @@ const slice = createSlice({
             })
 
             .addCase(ACTION_TYPES.SUPPLIER_EVAL_RESULT_REQUEST, (state) => {
-                _.set(state, "table.current.requestInProgress", true);
+                _.set(state, "table.currentTable", TABLE_ID.SUPPLIER);
                 _.set(state, "table.supplierAnalysisResult.requestInProgress", true);
             })
             .addCase(ACTION_TYPES.SUPPLIER_EVAL_RESULT_SUCCESS, (state, { payload = {} }) => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SPEND_ANALYSIS_COL, STATE_REDUCER_KEY, spendAnalysisColumnOrder } from "../../constants";
@@ -24,9 +25,6 @@ const SpendResultTable = () => {
         }
     };
 
-    useEffect(() => {
-        return (() => dispatch(sliceActions.clearAll()));
-    }, []);
     return (
         <CustomReactTable
             data={data}

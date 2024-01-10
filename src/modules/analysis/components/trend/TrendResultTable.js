@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { STATE_REDUCER_KEY, TREND_ANALYSIS_COL, trendAnalysisColumnOrder } from "../../constants";
@@ -25,7 +26,6 @@ const TrendResultTable = () => {
     };
 
     useEffect(() => {
-        return (() => dispatch(sliceActions.clearAll()));
     }, []);
     return (
         <CustomReactTable

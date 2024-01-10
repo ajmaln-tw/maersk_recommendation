@@ -1,4 +1,4 @@
-import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle } from "@mui/material";
+import { Box, Dialog, DialogActions, Button, Grid, Typography, DialogTitle, LinearProgress } from "@mui/material";
 import React from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { STATE_REDUCER_KEY } from "../../constants";
@@ -14,8 +14,7 @@ import { fetchSupplierResult } from "../../actions";
 const OverLaySupplier = ({ handleSubmit, errors }) => {
     const openSupplier = useSelector(state => state[STATE_REDUCER_KEY]).openSupplier;
     const vendorDropDown = useSelector(state => state[STATE_REDUCER_KEY]).vendorDropDown;
-
-
+    const loading = useSelector(state => state[STATE_REDUCER_KEY].table.supplierAnalysisResult.requestInProgress);
     const dispatch = useDispatch();
 
     const handleClose = () => dispatch(sliceActions.setOpenSupplier(false));
@@ -34,7 +33,8 @@ const OverLaySupplier = ({ handleSubmit, errors }) => {
                         </Grid>
                     </Grid>
                 </Form>
-            </CustomCard>;
+            </CustomCard>
+            {loading && <LinearProgress />}
             <DialogActions>
                 <Button onClick={handleClose} color="primary">
                     <span style={{ color: "red" }}> x </span> <Typography> Close </Typography>

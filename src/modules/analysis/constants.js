@@ -1,5 +1,9 @@
 export const STATE_REDUCER_KEY = "analysis";
-
+export const TABLE_ID = {
+    SUPPLIER: "SUPPLIER",
+    SPEND: "SPEND",
+    TREND: "TREND"
+};
 
 export const SPEND_ANALYSIS_COL = [
     {
