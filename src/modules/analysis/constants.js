@@ -184,22 +184,23 @@ export const SUPPLIER_ANALYSIS_COL = [
         accessorFn: (row) => row.Mean_Lead_Time.length ? row.Mean_Lead_Time.join(", ") : "",
         size: 130
     },
-    // {
-    //     id: "Item",
-    //     header: "Item",
-    //     accessorKey: "Item",
-    //     size: 130
-    // },
-    // {
-    //     id: "Total_Price per item",
-    //     header: "Total Price per Item",
-    //     accessorKey: "Total_Price per item",
-    //     size: 130
-    // },
+    {
+        id: "Item",
+        header: "Item",
+        accessorFn: (row) => row.accessorKey.length ? row.accessorKey.join(", ") : "",
+        size: 130
+    },
+    {
+        id: "Total_Price per item",
+        header: "Total Price per Item",
+        accessorKey: "Total_Price per item",
+        accessorFn: (row) => row["Total_Price per item"].length ? row["Total_Price per item"].join(", ") : "",
+        size: 130
+    },
     {
         id: "RATING",
         header: "RATING",
-        accessorKey: "RATING",
+        accessorKey: "Rating",
         size: 130
     }
 
